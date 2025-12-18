@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import "tailwindcss/preflight";
+@tailwind utilities;
 
 .input-dark {
   @apply w-full px-4 py-3 rounded-xl
