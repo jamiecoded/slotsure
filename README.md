@@ -61,17 +61,8 @@ Most scheduling apps are CRUD. SlotSure adds **business intelligence**:
 ---
 
 ## Demo
-👉 https://slotsure-demo.vercel.app *(replace with live link)*
+👉 work in progress
 
----
-
-## Interview summary
-> “A no-show prevention system that proactively flags risky appointments, forces patient intent confirmation, and recovers cancelled slots — all enforced at the database level.”
-
----
-
-**Author:** James  
-Full-Stack Developer
 ---
 
 ⭐ If you found this project interesting, feel free to star the repo.
