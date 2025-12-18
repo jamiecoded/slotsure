@@ -60,9 +60,9 @@ All rules are enforced at both the **application layer** and the **database laye
 - Create appointments with validation
 - Prevent double booking using a **database-level unique constraint**
 - Explicit state machine:
-scheduled → confirmed → completed
-scheduled → cancelled
-scheduled → at_risk → confirmed / cancelled
+- scheduled → confirmed → completed
+- scheduled → cancelled
+- scheduled → at_risk → confirmed / cancelled
 
 
 Invalid transitions are blocked in both UI and database policies.
