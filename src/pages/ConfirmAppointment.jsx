@@ -35,21 +35,36 @@ export default function ConfirmAppointment() {
   if (!appointment) return <p>Invalid or expired link</p>
 
   return (
-  <div className="min-h-screen flex items-center justify-center bg-gray-50">
-    <div className="bg-white p-6 rounded max-w-sm w-full text-center">
+  <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-neutral-900 to-black px-6">
+    <div
+      className="
+        w-full max-w-md
+        bg-white/10 backdrop-blur-xl
+        border border-white/20
+        rounded-3xl p-8
+        shadow-[0_20px_80px_rgba(0,0,0,0.8)]
+        text-center text-white
+      "
+    >
+      {/* Logo */}
+      <img
+        src="/assets/slotsure-dark.svg"
+        alt="SlotSure"
+        className="mx-auto h-20 mb-4"
+      />
 
       {/* TITLE */}
-      <h1 className="text-lg font-semibold">
-        Appointment Confirmation
+      <h1 className="text-xl font-semibold tracking-wide">
+        APPOINTMENT CONFIRMATION
       </h1>
 
       {/* PATIENT NAME */}
-      <p className="mt-2 font-medium">
+      <p className="mt-3 text-lg font-medium text-purple-300">
         {appointment.patient_name}
       </p>
 
-      {/* 👉 DATE & TIME (THIS IS THE DATE/TIME YOU ASKED ABOUT) */}
-      <p className="text-sm text-gray-600 mt-1">
+      {/* DATE & TIME */}
+      <p className="text-sm text-gray-300 mt-1">
         {new Date(appointment.appointment_time).toLocaleString(undefined, {
           dateStyle: "medium",
           timeStyle: "short",
@@ -57,49 +72,67 @@ export default function ConfirmAppointment() {
       </p>
 
       {/* HELPER TEXT */}
-      <p className="text-sm text-gray-600 mt-2">
-        Please confirm your appointment to help us prepare better for you.
+      <p className="text-sm text-gray-400 mt-4">
+        Please confirm your appointment to <br /> help us prepare better for you.
       </p>
 
-      {/* STATUS FEEDBACK (AFTER ACTION) */}
+      {/* STATUS FEEDBACK */}
       {appointment.status === "confirmed" && (
-        <p className="mt-4 text-green-600">
+        <p className="mt-5 text-green-400 font-medium">
           Your appointment has been confirmed.
         </p>
       )}
 
       {appointment.status === "cancelled" && (
-        <p className="mt-4 text-red-600">
+        <p className="mt-5 text-red-400 font-medium">
           Your appointment has been cancelled.
         </p>
       )}
 
       {appointment.status === "completed" && (
-        <p className="mt-4 text-blue-600">
-          Your appointment was sucessfully completed.
+        <p className="mt-5 text-purple-400 font-medium">
+          Your appointment was successfully completed.
         </p>
       )}
 
-      {/* 👉 ACTION BUTTONS (ONLY WHEN ALLOWED) */}
-      {appointment.status === "scheduled" ||
-      appointment.status === "at_risk" ? (
-        <div className="mt-6 flex gap-3 justify-center">
+      {/* ACTION BUTTONS */}
+      {(appointment.status === "scheduled" ||
+        appointment.status === "at_risk") && (
+        <div className="mt-8 flex gap-4 justify-center">
           <button
             onClick={() => updateStatus("confirmed")}
-            className="px-4 py-2 bg-green-600 text-white rounded"
+            className="
+              px-5 py-2 rounded-full
+              bg-gradient-to-r from-purple-600 to-purple-500
+              hover:from-purple-500 hover:to-purple-400
+              transition-all duration-300
+              hover:shadow-[0_0_25px_rgba(168,85,247,0.7)]
+              active:scale-95
+            "
           >
             Confirm
           </button>
 
           <button
             onClick={() => updateStatus("cancelled")}
-            className="px-4 py-2 bg-red-600 text-white rounded"
+            className="
+              px-5 py-2 rounded-full
+              border border-red-500
+              text-red-400
+              hover:bg-red-600 hover:text-white
+              transition-all duration-300
+              active:scale-95
+            "
           >
             Cancel
           </button>
         </div>
-      ) : null}
+      )}
 
+      {/* FOOTER */}
+      <p className="text-xs text-gray-500 mt-8">
+        Powered by SlotSure
+      </p>
     </div>
   </div>
 )
