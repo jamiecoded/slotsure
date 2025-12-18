@@ -1,6 +1,4 @@
 @import "tailwindcss";
-@import "tailwindcss/preflight";
-@tailwind utilities;
 
 .input-dark {
   @apply w-full px-4 py-3 rounded-xl
@@ -29,4 +27,11 @@
   transition-all duration-300
   hover:shadow-[0_0_10px_rgba(168,85,247,0.6)]
   active:scale-95;
+}
+
+.glass {
+  background: rgba(20, 20, 20, 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
