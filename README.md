@@ -8,8 +8,8 @@
 
 A production-ready appointment management system designed to **reduce no-shows**, **recover cancelled slots**, and **increase revenue** for clinics and service businesses.
 
-🔗 **Live Demo:** https://slotsure.vercel.app  
-📦 **Repository:** https://github.com/jamiecoded/slotsure
+🔗 **Live Demo:** [SlotSure](https://slotsure.vercel.app)  
+📦 **Repository:** [SlotSure-Repo](https://github.com/jamiecoded/slotsure)
 
 ---
 
@@ -95,18 +95,19 @@ This is a system clinics could actually use — not a CRUD demo.
 
 ## 🧪 Local Setup
 
-```bash
+```
 git clone https://github.com/jamiecoded/slotsure.git
 cd slotsure
 npm install
 npm run dev
-
+```
 ---
 
 **Create a .env file:**
-```bash
+```
 VITE_SUPABASE_URL=your_url
 VITE_SUPABASE_ANON_KEY=your_key
+```
 
 ---
 
