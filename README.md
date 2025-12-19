@@ -11,6 +11,11 @@ A production-ready appointment management system designed to **reduce no-shows**
 🔗 **Live Demo:** [SlotSure](https://slotsure.vercel.app)  
 📦 **Repository:** [SlotSure-Repo](https://github.com/jamiecoded/slotsure)
 
+**Test Credentials:**
+```
+username: test@clinic.com
+password: 123
+```
 ---
 
 ## 🚀 What Problem It Solves
