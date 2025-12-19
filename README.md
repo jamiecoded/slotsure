@@ -1,68 +1,125 @@
-# SlotSure  
-### Proactive No-Show Prevention for Clinics
+# SlotSure ⏱️  
+**Smarter bookings. Fewer gaps.**
 
 ![React](https://img.shields.io/badge/React-blue)
 ![Supabase](https://img.shields.io/badge/Supabase-green)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-blue)
 ![RLS](https://img.shields.io/badge/Security-RLS-critical)
 
----
+A production-ready appointment management system designed to **reduce no-shows**, **recover cancelled slots**, and **increase revenue** for clinics and service businesses.
 
-## What it does
-**SlotSure prevents appointment no-shows before they happen.**
-
-Instead of reacting after a slot is wasted, the system:
-- Flags risky appointments in advance
-- Forces patient confirmation or cancellation
-- Recovers cancelled slots using a waitlist
-
-Built with real clinic workflows in mind.
+🔗 **Live Demo:** https://slotsure.vercel.app  
+📦 **Repository:** https://github.com/jamiecoded/slotsure
 
 ---
 
-## Why it’s different
-Most scheduling apps are CRUD. SlotSure adds **business intelligence**:
+## 🚀 What Problem It Solves
 
-- ⏱ **Time-based risk detection** (`at_risk` appointments)
-- 🔗 **Public patient confirmation links** (no login)
-- 🔄 **Slot recovery suggestions** from a waitlist
-- 🔐 **Database-enforced rules** (not just UI logic)
+Missed appointments and late cancellations create empty slots that businesses can’t recover.
 
----
+**SlotSure fixes this by:**
+- Confirming appointments via secure links
+- Detecting at-risk bookings
+- Automatically filling cancelled slots from a waitlist
 
-## Key features
-- Appointment lifecycle with explicit state machine  
-  `scheduled → confirmed → completed / cancelled`
-- Automatic **at-risk detection** (within 24h, unconfirmed)
-- Secure token-based confirmation (public, no auth)
-- Waitlist-driven slot recovery
-- Double booking prevented at **database level**
-- Multi-tenant safe via **Row Level Security (RLS)**
+This is not a UI demo — it’s a **real operational workflow**.
 
 ---
 
-## How to test (2 minutes)
-1. Log in as a clinic
-2. Create an appointment within 24 hours
-3. See it marked **at_risk**
-4. Copy confirmation link → open in incognito
-5. Confirm or cancel
-6. Refresh dashboard → status updates
-7. Cancel an appointment with waitlist match → recovery suggested
+## ✨ Key Features
+
+### 🗓️ Appointment Lifecycle
+- Create appointments with unique time-slot enforcement
+- Status flow: `scheduled → confirmed → completed / cancelled`
+- Token-based public confirmation & cancellation
+
+### ⚠️ No-Show Prevention
+- At-risk appointment handling
+- Confirmation via secure public links
+
+### 🔁 Slot Recovery Engine
+- Waitlist system for fully booked times
+- One-click recovery when a slot opens
+- Automatic removal from waitlist after booking
+
+### 🧑‍⚕️ Admin Dashboard
+- Real-time appointment management
+- Copyable confirmation links
+- Modern UI with smooth transitions
+
+### 🔐 Security & Data Integrity
+- Supabase authentication
+- Row Level Security (RLS)
+- Database-level slot uniqueness
+- Safe public routes (token-based, no auth leakage)
 
 ---
 
-## Tech stack
-- **Frontend:** React, Vite, Tailwind CSS
-- **Backend:** Supabase, PostgreSQL
-- **Security:** Row Level Security (RLS)
-- **Concepts:** State machines, time-based logic, DB constraints
+## 🛠️ Tech Stack
+
+**Frontend**
+- React (Vite)
+- Tailwind CSS
+- React Router
+
+**Backend**
+- Supabase (PostgreSQL + Auth)
+- Row Level Security (RLS)
+
+**Deployment**
+- Vercel (SPA routing configured)
 
 ---
 
-## Demo
-👉 work in progress
+## 🧠 Engineering Highlights
+
+- Database constraints prevent double bookings
+- Idempotent slot recovery logic
+- Public confirmation routes without exposing sensitive data
+- Clean separation of admin and public flows
+- Built with real production edge cases in mind
 
 ---
 
-⭐ If you found this project interesting, feel free to star the repo.
+## 📈 Why This Project Stands Out
+
+- Solves a **real business problem**
+- Demonstrates **full-stack ownership**
+- Handles edge cases and failure states
+- Production-deployed and tested
+- Designed for scalability
+
+This is a system clinics could actually use — not a CRUD demo.
+
+---
+
+## 🧪 Local Setup
+
+```bash
+git clone https://github.com/jamiecoded/slotsure.git
+cd slotsure
+npm install
+npm run dev
+
+---
+
+**Create a .env file:**
+```bash
+VITE_SUPABASE_URL=your_url
+VITE_SUPABASE_ANON_KEY=your_key
+
+---
+
+## 🔮 Future Enhancements (Optional)
+- Email / SMS reminders
+- Analytics dashboard (no-show %, recovered revenue)
+- Multi-clinic support
+- Calendar integrations
+- Payments
+
+---
+
+## 👨‍💻 Author
+**James**
+Full-Stack Developer
+🔗 https://github.com/jamiecoded
