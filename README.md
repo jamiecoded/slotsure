@@ -13,7 +13,7 @@ A production-ready appointment management system designed to **reduce no-shows**
 
 **Test Credentials:**
 ```
-username: test@clinic.com
+email: test@clinic.com
 password: 123
 ```
 ---
